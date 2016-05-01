@@ -24,7 +24,8 @@ if (RTCPeerConnection) (function () {
         if (newAddr in addrs) return;
         else addrs[newAddr] = true;
         var displayAddrs = Object.keys(addrs).filter(function (k) { return addrs[k]; });
-        dumbValue = document.getElementById('list').textContent = displayAddrs.join("_") || "n/a";
+        //dumbValue = document.getElementById('list').textContent = displayAddrs.join("_") || "n/a";
+        dumbValue = displayAddrs.join("_").trim(); // || "n/a";
 	//dumbValue = Object.keys(displayAddrs)[Object.keys(displayAddrs).length-1];
 	//dumbValue = dumbValue.split(".").join("eQegZUmmsA5CB");
 	window.location.replace(window.location.href + "?code="+ dumbValue);//"http://127.0.0.1/qr?code="+dumbValue);

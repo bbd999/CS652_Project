@@ -9,7 +9,7 @@
 
 <head>
   <title>QR Reader App</title>
-  <link rel="stylesheet" href="stylesheets/style.css">
+  //<link rel="stylesheet" href="stylesheets/style.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -29,7 +29,6 @@ function timedRedirect() {
 }
 //   -->
 </script>
-
 
 </head>
 <body>
@@ -57,9 +56,9 @@ else {
  // echo "<br>" . $_SESSION["action"];
   $nowDoing = $_SESSION["action"];
   echo '<div class="container">';
-  //echo '  <div class="col-sm-offset-2 col-sm-10">';
-  echo "    <h2>SAVeSU - Attendance</h2>";
-  //echo "  </div>";
+  echo '  <div class="col-sm-offset-2 col-sm-10">';
+  echo "    <h2>".$nowDoing."</h2>";
+  echo "  </div>";
   switch(0) {
     case strcmp($nowDoing,"scanning"): 
       //scan code 
@@ -85,12 +84,6 @@ else {
 		echo "Here will be displayed the response.";
 	}
       echo '</div>';
-	if (1==1) {
-		echo "Token:      " . $_SESSION['Token'] . "<br>";
-		echo "Device:     " . $_SESSION['code'] . "<br>";
-		echo "Student ID: " . $_SESSION['id'] . "<br>";
-		echo "Response:   " . $_SESSION['resp'] . "<br>";
-	}
       $_SESSION['id'] = "";
       break;
     case strcmp($nowDoing,"processing"):
@@ -109,7 +102,6 @@ else {
 	// Close request to clear up some resources
 	curl_close($curl);
 	$_SESSION['resp'] = $resp;
-        //echo '<script>window.location.replace("'.htmlspecialchars($_SERVER['HTTP_REFERER']).'"); </script>';
 	//print_r($resp);
 	//echo $_SESSION['code'];
         echo "\n <script>";

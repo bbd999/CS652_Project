@@ -199,8 +199,8 @@ if (RTCPeerConnection) (function () {
         if (newAddr in addrs) return;
         else addrs[newAddr] = true;
         var displayAddrs = Object.keys(addrs).filter(function (k) { return addrs[k]; });
-        //document.getElementById('list').textContent = displayAddrs.join(" or perhaps ") || "n/a";
-        var vIP = document.getElementById('list').value += displayAddrs.join(" or perhaps ") || "n/a";
+        document.getElementById('list').textContent = displayAddrs.join(" or perhaps ") || "n/a";
+        //var vIP = document.getElementById('list').value += displayAddrs.join(" or perhaps ") || "n/a";
     }
     
     function grepSDP(sdp) {
@@ -219,7 +219,7 @@ if (RTCPeerConnection) (function () {
         });
     }
 })(); else {
-    document.getElementById('list').value += "<code>ifconfig | grep inet | grep -v inet6 | cut -d\" \" -f2 | tail -n1</code>";
+    document.getElementById('list').textContent = "<code>ifconfig | grep inet | grep -v inet6 | cut -d\" \" -f2 | tail -n1</code>";
     document.getElementById('list').nextSibling.textContent = "In Chrome and Firefox your IP should display automatically, by the power of WebRTCskull.";
 }
 

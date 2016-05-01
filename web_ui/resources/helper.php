@@ -24,7 +24,7 @@ function setFooter($backurl) {
 	echo '<div class="form-group">';
 	echo '<div class="col-sm-offset-2 col-sm-10">';
 	//Back Button
-	echo '<input class="btn btn-lg btn-primary btn-block" type="button" value="Back" onClick="parent.location='."'".$backurl."'".'">';
+	echo '<input class="btn btn-lg btn-primary btn-block" type="button" value="Back" onClick="window.history.back()">';//parent.location='."'".$backurl."'".'">';
         echo "</div>";
         echo "</div>";
         echo "</form>";
@@ -46,7 +46,7 @@ function getModuleActions($module) {
 	$actionArray = array();
 	switch ($module) {
 		case "course":
-			$actionArray = array("Find","Add","Update","Delete");
+			$actionArray = array("Find","Add","Update","Delete", "Roster_For");
 			break;
 		default:
 	}

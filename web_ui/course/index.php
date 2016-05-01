@@ -38,7 +38,7 @@ $params = array();
 else {*/
 	//display module menu
 	//module action setup
-	$moduleActions = array("Get", "Add", "List");
+	$moduleActions = getModuleActions($module);//array("Get", "Add", "List");
 	$numActions = count($moduleActions);
 	//set header
 	setHeader("Attendance Tracking User Interface - ".$title,$title." Menu");
@@ -47,7 +47,7 @@ else {*/
 		echo '  <div class="form-group">';
 		echo '    <div class="col-sm-offset-2 col-sm-10">';
 		echo '      <input class="btn btn-lg btn-primary btn-block" type="button" value="';
-		echo $moduleActions[$x]." ".$title.'" onClick="parent.location='."'/ui/".strtolower($module)."/".strtolower($moduleActions[$x]).".php'".'" >';
+		echo str_replace("_"," ",$moduleActions[$x])." ".$title.'" onClick="parent.location='."'/ui/".strtolower($module)."/".strtolower($moduleActions[$x]).".php'".'" >';
 		//echo $moduleActions[$x]." ".$title.'" onClick="parent.location='."'/ui/".strtolower($module)."/?action=".$moduleActions[$x]."'".'" >';
 		echo '    </div>';
 		echo '  </div>';
